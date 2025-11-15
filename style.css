@@ -1,0 +1,121 @@
+body {
+      background-color: rgb(248, 109, 109);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .painel {
+      position: relative;
+      z-index: 10;
+      font-family: Arial, sans-serif;
+      width: 100%;
+      max-width: 400px;
+      background-color: rgba(255, 255, 255, 0.74);
+      border-radius: 20px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: rgb(253, 253, 253);
+      text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.336);
+      font-weight: bold;
+      font-size: 30px;
+      margin-bottom: 0;
+    }
+    p{
+      
+    }
+
+    img {
+      width: 250px;
+      height: auto;
+    }
+
+    button {
+      height: 50px;
+      width: 90px;
+      font-size: 18px;
+      margin: 10px;
+      background-color: red;
+      color: white;
+      border: rgba(20, 1, 1, 0.123) 3px solid;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #sim {
+      margin-left: -100px;
+    }
+
+    #nao {
+      position: absolute;
+    }
+
+    /* --- POPUP --- */
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(3px);
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.4s ease;
+      z-index: 999;
+    }
+
+    .popup.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup-content {
+      background: rgba(255, 255, 255, 0.932);
+      padding: 25px;
+      width: 70%;
+      max-width: 350px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transform: scale(0.7);
+      animation: popupZoom 0.4s forwards ease;
+    }
+
+    @keyframes popupZoom {
+      0% { transform: scale(0.6); }
+      100% { transform: scale(1); }
+    }
+
+    .close-btn {
+      margin-top: 15px;
+      background-color: #ff4f4f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+
+    @media (max-width: 480px) {
+
+      .painel {
+        /* aumenta um pouco o padding em telas pequenas */
+        padding: 15px;
+        margin: 20px;
+      }
+
+      button {
+        width: 80px;
+        height: 45px;
+        font-size: 16px;
+      }
+    }

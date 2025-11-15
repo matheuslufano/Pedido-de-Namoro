@@ -4,79 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Namora Comigo?</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="background.css">
 
-  <style>
-    body {
-      background-color: rgb(248, 109, 109);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .painel {
-      font-family: Arial, sans-serif;
-      width: 90%;
-      max-width: 400px;
-      background-color: white;
-      border-radius: 20px;
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    button {
-      height: 50px;
-      width: 90px;
-      font-size: 18px;
-      margin: 10px;
-      background-color: red;
-      color: white;
-      border: white 3px solid;
-      border-radius: 10px;
-      cursor: pointer;
-    }
-    #sim {
-      margin-left: -100px;
-    }
-
-    #nao {
-      position: absolute;
-    }
-
-    @media (max-width: 480px) {
-
-      .painel {
-        /* aumenta um pouco o padding em telas pequenas */
-        padding: 15px;
-        margin: 20px;
-      }
-
-      button {
-        width: 80px;
-        height: 45px;
-        font-size: 16px;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-  <div class="painel">
-    <h1>Vitor eu te amor</h1>
-    <img src="https://i.pinimg.com/originals/fa/49/4e/fa494e85b6099eda29f75fa0ae547e7a.gif" alt="ursinho">
+  <section class="painel">
+    <h1>VITOR EU TE AMOR!</h1>
+    <img src="https://media.tenor.com/b6RQe67v8s0AAAAj/i-love-you.gif" alt="ursinho">
     <p>Aceita namora Comigo?</p>
-
     <button onclick="parabens()" id="sim">Sim</button>
     <button onclick="fuja()" onmouseover="fuja()" id="nao">Não</button>
+    
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h2>🎉 Parabéns! 🎉</h2>
+        <p>Você fez a escolha certa! ❤️</p>
+        <button onclick="fecharPopup()" class="close-btn">Fechar</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrapper">
+    <svg class="heart" version="1.1"
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+      x="0px" y="0px" width="101.7px" height="87.6px" viewBox="0 0 101.7 87.6" enable-background="new 0 0 101.7 87.6"
+      xml:space="preserve">
+    <path d="M51,12.8c0-0.1-0.1-0.1-0.1-0.2c0,0.1-0.1,0.1-0.1,0.2C31-10.7,0,0.2,0,28.9c0,27.6,40.7,56.9,50.9,58.8
+      c10.1-1.8,50.9-31.1,50.9-58.8C101.7,0.2,70.7-10.7,51,12.8z"/>
+    </svg>
   </div>
 
   <script>
@@ -96,6 +57,34 @@
     function parabens() {
       alert("Parabéns! Você fez uma ótima escolha :)");
     }
+
+    // sons opcionais
+  const somClick = new Audio("click.mp3");
+
+  function parabens() {
+    somClick.currentTime = 0;
+    somClick.play();
+    abrirPopup();
+  }
+
+  function abrirPopup() {
+    document.getElementById("popup").classList.add("show");
+  }
+
+  function fecharPopup() {
+    document.getElementById("popup").classList.remove("show");
+  }
+
+  // botão "não"
+  const somFuja = new Audio("jump.mp3");
+  function fuja() {
+    somFuja.currentTime = 0;
+    somFuja.play();
+
+    const botao = document.getElementById("nao");
+    botao.style.top = (Math.random() * 300) + "px";
+    botao.style.left = (Math.random() * 300) + "px";
+  }
   </script>
 
 </body>
