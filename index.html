@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close" />
 </head>
 
 <body>
@@ -23,9 +24,16 @@
     
     <div id="popup" class="popup">
       <div class="popup-content">
+        <button onclick="fecharPopup()" class="close-btn">
+          <span class="material-symbols-outlined">
+          close
+          </span>
+        </button>
         <h2>🎉 Parabéns! 🎉</h2>
-        <p>Você fez a escolha certa! ❤️</p>
-        <button onclick="fecharPopup()" class="close-btn">Fechar</button>
+        <p>Você fez a escolha certa! 💛</p>
+        <button id="botaoLink" onclick="window.location.href='https://declaration-of-love.vercel.app/'">
+          Declaração de amor 
+        </button>
       </div>
     </div>
   </section>

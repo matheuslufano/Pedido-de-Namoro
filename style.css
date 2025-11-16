@@ -87,6 +87,54 @@ body {
       transform: scale(0.7);
       animation: popupZoom 0.4s forwards ease;
     }
+    .popup-content {
+  position: relative; /* Necessário para posicionar o X dentro do popup */
+}
+
+  #botaoLink {
+    height: 50px;
+    width: 120px;
+    margin-top: 15px;
+    background-color: #eeea06;
+    color: rgb(143, 123, 12);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+
+    background: #ff4f4f;
+    border: none;
+    border-radius: 50%;
+
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+
+    display: flex;            /* ativa flexbox */
+    justify-content: center;  /* centraliza horizontal */
+    align-items: center;      /* centraliza vertical */
+
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+  
+
+  .close-btn:hover {
+    background: #ff2b2b;
+    transform: scale(1.1);
+  }
+
 
     @keyframes popupZoom {
       0% { transform: scale(0.6); }
@@ -103,7 +151,6 @@ body {
       font-size: 16px;
       cursor: pointer;
     }
-
 
     @media (max-width: 480px) {
 
