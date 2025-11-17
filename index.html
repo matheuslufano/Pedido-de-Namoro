@@ -6,6 +6,7 @@
   <title>Namora Comigo?</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="background.css">
+  <link rel="stylesheet" href="/background/arco-íris.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +16,9 @@
 </head>
 
 <body>
+  <audio id='erro' src="sons/erro.mp3"></audio>
+  <audio id='vitoria' src="sons/vitoria.mp3"></audio>
+
   <section class="painel">
     <h1>VITOR EU TE AMOR!</h1>
     <img src="https://media.tenor.com/b6RQe67v8s0AAAAj/i-love-you.gif" alt="ursinho">
@@ -38,7 +42,7 @@
     </div>
   </section>
 
-  <div class="wrapper">
+  <!-- <div class="wrapper">
     <svg class="heart" version="1.1"
       xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
       x="0px" y="0px" width="101.7px" height="87.6px" viewBox="0 0 101.7 87.6" enable-background="new 0 0 101.7 87.6"
@@ -46,54 +50,48 @@
     <path d="M51,12.8c0-0.1-0.1-0.1-0.1-0.2c0,0.1-0.1,0.1-0.1,0.2C31-10.7,0,0.2,0,28.9c0,27.6,40.7,56.9,50.9,58.8
       c10.1-1.8,50.9-31.1,50.9-58.8C101.7,0.2,70.7-10.7,51,12.8z"/>
     </svg>
-  </div>
+    <svg class="heart" version="1.1"
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+      x="0px" y="0px" width="101.7px" height="87.6px" viewBox="0 0 101.7 87.6" enable-background="new 0 0 101.7 87.6"
+      xml:space="preserve">
+    <path d="M51,12.8c0-0.1-0.1-0.1-0.1-0.2c0,0.1-0.1,0.1-0.1,0.2C31-10.7,0,0.2,0,28.9c0,27.6,40.7,56.9,50.9,58.8
+      c10.1-1.8,50.9-31.1,50.9-58.8C101.7,0.2,70.7-10.7,51,12.8z"/>
+    </svg>
+    <svg class="heart" version="1.1"
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+      x="0px" y="0px" width="101.7px" height="87.6px" viewBox="0 0 101.7 87.6" enable-background="new 0 0 101.7 87.6"
+      xml:space="preserve">
+    <path d="M51,12.8c0-0.1-0.1-0.1-0.1-0.2c0,0.1-0.1,0.1-0.1,0.2C31-10.7,0,0.2,0,28.9c0,27.6,40.7,56.9,50.9,58.8
+      c10.1-1.8,50.9-31.1,50.9-58.8C101.7,0.2,70.7-10.7,51,12.8z"/>
+    </svg>
+    <svg class="heart" version="1.1"
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+      x="0px" y="0px" width="101.7px" height="87.6px" viewBox="0 0 101.7 87.6" enable-background="new 0 0 101.7 87.6"
+      xml:space="preserve">
+    <path d="M51,12.8c0-0.1-0.1-0.1-0.1-0.2c0,0.1-0.1,0.1-0.1,0.2C31-10.7,0,0.2,0,28.9c0,27.6,40.7,56.9,50.9,58.8
+      c10.1-1.8,50.9-31.1,50.9-58.8C101.7,0.2,70.7-10.7,51,12.8z"/>
+    </svg>
+    <svg class="heart" version="1.1"
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+      x="0px" y="0px" width="101.7px" height="87.6px" viewBox="0 0 101.7 87.6" enable-background="new 0 0 101.7 87.6"
+      xml:space="preserve">
+    <path d="M51,12.8c0-0.1-0.1-0.1-0.1-0.2c0,0.1-0.1,0.1-0.1,0.2C31-10.7,0,0.2,0,28.9c0,27.6,40.7,56.9,50.9,58.8
+      c10.1-1.8,50.9-31.1,50.9-58.8C101.7,0.2,70.7-10.7,51,12.8z"/>
+    </svg>
+</div> -->
 
-  <script>
-    function fuja() {
-      var botaoNao = document.getElementById("nao");
+<svg id="hearts" viewBox="-600 -400 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <symbol  id="heart" viewBox="-69 -16 138 138">
+    <path d="M0,12
+             C 50,-30 110,50  0,120
+             C-110,50 -50,-30 0,12z"/>
+    </symbol>
+</defs>
+</svg>
 
-      var larguraTela = window.innerWidth - botaoNao.offsetWidth;
-      var alturaTela = window.innerHeight - botaoNao.offsetHeight;
-
-      var novaPosicaoX = Math.random() * larguraTela;
-      var novaPosicaoY = Math.random() * alturaTela;
-
-      botaoNao.style.left = novaPosicaoX + "px";
-      botaoNao.style.top = novaPosicaoY + "px";
-    }
-
-    function parabens() {
-      alert("Parabéns! Você fez uma ótima escolha :)");
-    }
-
-    // sons opcionais
-  const somClick = new Audio("click.mp3");
-
-  function parabens() {
-    somClick.currentTime = 0;
-    somClick.play();
-    abrirPopup();
-  }
-
-  function abrirPopup() {
-    document.getElementById("popup").classList.add("show");
-  }
-
-  function fecharPopup() {
-    document.getElementById("popup").classList.remove("show");
-  }
-
-  // botão "não"
-  const somFuja = new Audio("jump.mp3");
-  function fuja() {
-    somFuja.currentTime = 0;
-    somFuja.play();
-
-    const botao = document.getElementById("nao");
-    botao.style.top = (Math.random() * 300) + "px";
-    botao.style.left = (Math.random() * 300) + "px";
-  }
-  </script>
+  <script src="script.js"></script>
+  <script src="/background/arco-íris.js"></script>
 
 </body>
 </html>
