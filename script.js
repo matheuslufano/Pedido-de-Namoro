@@ -1,6 +1,13 @@
 const somFuja = new Audio("sons/erro.mp3");
 const somClick = new Audio("sons/vitoria.mp3");
 
+// === Função de vibração ===
+function vibrar() {
+  if (navigator.vibrate) {
+    navigator.vibrate(200); // vibra 200ms
+  }
+}
+
 function fuja() {
   var botaoNao = document.getElementById("nao");
 
@@ -12,6 +19,9 @@ function fuja() {
 
   somFuja.currentTime = 0;
   somFuja.play();
+
+    // 🚨 Faz vibrar quando toca no botão "Não"
+  vibrar();
 
   botaoNao.style.left = novaPosicaoX + "px";
   botaoNao.style.top = novaPosicaoY + "px";
@@ -33,14 +43,6 @@ function parabens() {
 somClick.currentTime = 0;
 somClick.play();
 abrirPopup();
-}
-
-function vibrar() {
-    if (navigator.vibrate) {
-        navigator.vibrate(200); // vibra por 200ms
-    } else {
-        console.log("Vibração não suportada neste dispositivo.");
-    }
 }
 
 
