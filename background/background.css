@@ -96,3 +96,49 @@ html, body {
   }
 }
 
+/* ======== MODAL DE SENHA ======== */
+.senha-modal {
+  display: none;
+  position: fixed;
+  z-index: 100001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.senha-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+}
+
+.senha-content input {
+  padding: 10px;
+  width: 90%;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.senha-content button {
+  padding: 10px;
+  width: 100%;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.erro-senha {
+  color: red;
+  margin-top: 10px;
+}

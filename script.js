@@ -34,3 +34,32 @@ somClick.currentTime = 0;
 somClick.play();
 abrirPopup();
 }
+
+// BOTÃO DECLARAÇÃO
+const botaoDeclaracao = document.getElementById("btnDeclaracao");
+
+// MODAL SENHA
+const senhaModal = document.getElementById("senhaModal");
+const confirmarSenha = document.getElementById("confirmarSenha");
+const senhaInput = document.getElementById("senhaInput");
+const erroSenha = document.getElementById("erroSenha");
+
+// SENHA CORRETA
+const SENHA_CORRETA = "batata frita";
+
+// Abre o modal de senha (chame isso quando quiser)
+function abrirModalSenha() {
+    senhaModal.style.display = "flex";
+}
+
+// Verifica a senha
+confirmarSenha.addEventListener("click", () => {
+    if (senhaInput.value === SENHA_CORRETA) {
+        senhaModal.style.display = "none";
+        botaoDeclaracao.disabled = false;  // libera o botão
+        botaoDeclaracao.style.opacity = "1";
+        erroSenha.textContent = "";
+    } else {
+        erroSenha.textContent = "Senha incorreta!";
+    }
+});
