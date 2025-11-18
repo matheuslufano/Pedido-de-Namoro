@@ -35,6 +35,15 @@ somClick.play();
 abrirPopup();
 }
 
+function vibrar() {
+    if (navigator.vibrate) {
+        navigator.vibrate(200); // vibra por 200ms
+    } else {
+        console.log("Vibração não suportada neste dispositivo.");
+    }
+}
+
+
 // BOTÃO DECLARAÇÃO
 const botaoDeclaracao = document.getElementById("btnDeclaracao");
 
